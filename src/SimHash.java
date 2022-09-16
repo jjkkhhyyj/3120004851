@@ -1,3 +1,7 @@
+import com.hankcs.hanlp.HanLP;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.util.List;
 public class SimHash {
     public static String getHash(String str){
         try{
@@ -12,8 +16,12 @@ public class SimHash {
 
     public static String getSimHash(String str){
         try{
-            if(str.length() < 200) throw new ShortStringException("文本过短！");
-        }catch (ShortStringException e){
+            if(str.length() < 200) try {
+                throw new Exception("文本过短！");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }catch (Exception e){
             e.printStackTrace();
             return null;
         }
@@ -58,5 +66,4 @@ public class SimHash {
         }
         return simHash;
     }
-
 }
