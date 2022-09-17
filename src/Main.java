@@ -1,4 +1,5 @@
 import com.hankcs.hanlp.HanLP;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.math.BigInteger;

@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 public class Hamming {
     public static int getHammingDistance(String simHash1, String simHash2) {
         int distance = 0;
@@ -11,8 +13,7 @@ public class Hamming {
             }
         }
         return distance;
-    }
-    public static double getSimilarity(String simHash1, String simHash2) {
+    }    public static double getSimilarity(String simHash1, String simHash2) {
         int distance = getHammingDistance(simHash1, simHash2);
         return 0.01 * (100 - distance * 100 / 128);
     }

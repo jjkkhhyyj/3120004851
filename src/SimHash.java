@@ -12,7 +12,6 @@ public class SimHash {
             return str;
         }
     }
-
     public static String get(String str){
         try{
             if(str.length() < 200) try {
@@ -25,10 +24,10 @@ public class SimHash {
             return null;
         }
         int[] v = new int[128];
-        List<String> keywordList = HanLP.extractKeyword(str, str.length());
-        int size = keywordList.size();
+        List<String> list = HanLP.extractKeyword(str, str.length());
+        int size = list.size();
         int i = 0;
-        for(String keyword : keywordList){
+        for(String keyword : list){
             String keywordHash = getHash(keyword);
             if (keywordHash.length() < 128) {
                 int dif = 128 - keywordHash.length();
@@ -39,7 +38,8 @@ public class SimHash {
             for (int j = 0; j < v.length; j++) {
                 if (keywordHash.charAt(j) == '1') {
                     v[j] += (10 - (i / (size / 10)));
-                } else {
+                }
+                else {
                     v[j] -= (10 - (i / (size / 10)));
                 }
             }

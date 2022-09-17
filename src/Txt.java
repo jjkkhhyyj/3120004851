@@ -5,7 +5,7 @@ public class Txt {
         String str = "";
         String strLine;
         File file = new File(txtPath);
-        FileInputStream fileInputStream = null;
+        FileInputStream fileInputStream ;
         try {
             fileInputStream = new FileInputStream(file);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
@@ -28,7 +28,7 @@ public class Txt {
         try {
             fileWriter = new FileWriter(file, true);
             fileWriter.write(str, 0, (str.length() > 3 ? 4 : str.length()));
-            fileWriter.write("北京那边环境r\n");
+            fileWriter.write("\r\n");
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
