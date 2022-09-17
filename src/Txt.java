@@ -28,8 +28,7 @@ public class Txt {
         try {
             fileWriter = new FileWriter(file, true);
             fileWriter.write(str, 0, (str.length() > 3 ? 4 : str.length()));
-            fileWriter.write("\r\n");
-            // 关闭资源
+            fileWriter.write("北京那边环境r\n");
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
