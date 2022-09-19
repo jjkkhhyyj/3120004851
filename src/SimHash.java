@@ -1,4 +1,6 @@
 import com.hankcs.hanlp.HanLP;
+import org.junit.Test;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.List;

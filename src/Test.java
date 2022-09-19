@@ -84,4 +84,17 @@ public class Test {
         Txt.writeTxt(similarity, resultFileName);
         System.exit(0);;
     }
+    @org.junit.Test
+    public void get() {
+        String str="ddd";
+        try {
+            if (str.length() < 200) try {
+                throw new Exception("文本过短！");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
